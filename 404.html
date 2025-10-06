@@ -332,11 +332,42 @@
 
   <script  src="/js/local-search.js" ></script>
 
-  <script defer src="https://vercount.one/js/busuanzi.pure.mini.js" ></script>
+  <script defer src="https://cn.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
 
 
 
 
+
+<!-- vercount适配 #https://github.com/EvanNotFound/vercount/issues/4 -->
+
+
+<script>
+
+function observeAndDisplay(sourceId, targetId) {
+  if (document.getElementById(sourceId)) {
+    new MutationObserver(m => {
+      m.forEach(m => {
+        if (m.target.textContent.trim() !== '') {
+          document.getElementById(targetId).style.display = 'inline';
+        }
+      });
+    })
+      .observe(
+        document.getElementById(sourceId),
+        { childList: true, characterData: true, subtree: true }
+      ); 
+  }
+    
+} 
+
+observeAndDisplay('busuanzi_value_page_pv', 'busuanzi_container_page_pv');
+observeAndDisplay('busuanzi_value_site_pv', 'busuanzi_container_site_pv');
+observeAndDisplay('busuanzi_value_site_uv', 'busuanzi_container_site_uv');
+    
+
+</script> 
+
+  <script defer src="https://cn.vercount.one/js?i=/busuanzi.pure.mini.js" ></script>
 
 <!-- 主题的启动项，将它保持在最底部 -->
 <!-- the boot of the theme, keep it at the bottom -->
