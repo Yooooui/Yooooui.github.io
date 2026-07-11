@@ -554,7 +554,7 @@ KEEP.initUtils = () => {
           script.setAttribute('data-pjax', '')
           script.setAttribute('id', tmpId)
           script.async = true
-          script.src = '//https://events.vercount.one/js'
+          script.src = '//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'
           document.body.appendChild(script)
         }
 
